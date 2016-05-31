@@ -12,7 +12,7 @@ public class Constants {
 
 
     // Log tags
-    public static String LOG_CATCH_EXCEPTION_VERBOSE = "Catch: ";
+    public static final String LOG_CATCH_EXCEPTION_VERBOSE = "Catch: ";
 
     public String firebaseUrl = BuildConfig.FIREBASE_URL;
 }

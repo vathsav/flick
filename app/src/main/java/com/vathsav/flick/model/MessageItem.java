@@ -4,10 +4,10 @@ package com.vathsav.flick.model;
  * Created by vathsav on 31/05/16.
  */
 public class MessageItem {
-    String messageId;
-    String senderName;
-    String messageBody;
-    String messageTimestamp;
+    private String messageId;
+    private String senderName;
+    private String messageBody;
+    private String messageTimestamp;
 
     public MessageItem() {
     }

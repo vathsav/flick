@@ -14,8 +14,8 @@ import java.util.List;
  * Created by vathsav on 31/05/16.
  */
 public class ConversationAdapter extends RecyclerView.Adapter<ConversationHolder> {
-    List<ConversationItem> listOfConversations;
-    Context context;
+    private final List<ConversationItem> listOfConversations;
+    private final Context context;
 
     public ConversationAdapter(List<ConversationItem> listOfConversations, Context context) {
         this.listOfConversations = listOfConversations;

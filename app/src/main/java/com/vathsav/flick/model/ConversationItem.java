@@ -5,9 +5,9 @@ package com.vathsav.flick.model;
  * POJO for Conversation List Item
  */
 public class ConversationItem {
-    int id;
-    String contactName;
-    String lastMessage;
+    private final int id;
+    private final String contactName;
+    private final String lastMessage;
 
     public ConversationItem(int id, String contactName, String lastMessage) {
         this.id = id;

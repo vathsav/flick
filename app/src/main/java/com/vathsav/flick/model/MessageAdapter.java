@@ -15,8 +15,8 @@ import java.util.List;
  * Created by vathsav on 31/05/16.
  */
 public class MessageAdapter extends RecyclerView.Adapter<MessageHolder> {
-    List<MessageItem> conversationThread;
-    Context context;
+    private final List<MessageItem> conversationThread;
+    private final Context context;
 
     public MessageAdapter(List<MessageItem> conversationThread, Context context) {
         this.conversationThread = conversationThread;

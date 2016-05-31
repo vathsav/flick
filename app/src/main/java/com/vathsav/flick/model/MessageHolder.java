@@ -11,9 +11,9 @@ import com.vathsav.flick.R;
  * Created by vathsav on 31/05/16.
  */
 public class MessageHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-    Context context;
-    TextView chatBubbleLeft;
-    TextView chatBubbleRight;
+    private final Context context;
+    final TextView chatBubbleLeft;
+    final TextView chatBubbleRight;
 
     public MessageHolder(View itemView, Context context) {
         super(itemView);

@@ -12,9 +12,9 @@ import com.vathsav.flick.R;
  * Created by vathsav on 31/05/16.
  */
 public class ConversationHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-    Context context;
-    TextView conversationName;
-    TextView conversationMessage;
+    private final Context context;
+    final TextView conversationName;
+    final TextView conversationMessage;
 
     public ConversationHolder(View itemView, Context context) {
         super(itemView);

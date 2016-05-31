@@ -24,8 +24,8 @@ import java.util.List;
 
 public class ThreadActivity extends AppCompatActivity {
 
-    DatabaseReference reference;
-    RecyclerView recyclerView;
+    private DatabaseReference reference;
+    private RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +43,8 @@ public class ThreadActivity extends AppCompatActivity {
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view_conversation_thread);
         StaggeredGridLayoutManager staggeredGridLayoutManager = new StaggeredGridLayoutManager(1, 1);
 
-        final MessageAdapter messageAdapter = new MessageAdapter(createDummyConversationThread(), getApplicationContext());
+        MessageAdapter messageAdapter = new
+                MessageAdapter(createDummyConversationThread(), getApplicationContext());
 
         if (recyclerView != null) {
             recyclerView.setLayoutManager(staggeredGridLayoutManager);
@@ -80,11 +81,12 @@ public class ThreadActivity extends AppCompatActivity {
             buttonFlick.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    reference.push().setValue(new MessageItem(String.valueOf(reference.push().hashCode()),
-                            Constants.userName,
-                            message.getText().toString(),
-                            String.valueOf(System.currentTimeMillis())
-                    ));
+                    reference.push().setValue(
+                            new MessageItem(String.valueOf(reference.push().hashCode()),
+                                    Constants.userName,
+                                    message.getText().toString(),
+                                    String.valueOf(System.currentTimeMillis())
+                            ));
                 }
             });
         }
@@ -92,7 +94,12 @@ public class ThreadActivity extends AppCompatActivity {
 
     private List<MessageItem> createDummyConversationThread() {
         List<MessageItem> conversation = new ArrayList<>();
-        conversation.add(new MessageItem("1", "Vathsav", "Loading Conversation", String.valueOf(System.currentTimeMillis())));
+        conversation.add(
+                new MessageItem("1",
+                        "Vathsav",
+                        "Loading Conversation",
+                        String.valueOf(System.currentTimeMillis())
+                ));
         return conversation;
     }
 }
