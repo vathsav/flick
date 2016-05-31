@@ -9,4 +9,33 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.vathsav.flick.activity.ThreadActivity">
 
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view_conversation_thread"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/button_flick"
+        android:clipToPadding="false"
+        android:padding="@dimen/conversation_recycler_view_padding"
+        android:scrollbars="vertical" />
+
+    <EditText
+        android:id="@+id/edit_text_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_toLeftOf="@+id/button_flick"
+        android:layout_toStartOf="@+id/button_flick"
+        android:ems="10"
+        android:inputType="textMultiLine" />
+
+    <Button
+        android:id="@+id/button_flick"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:text="@string/button_flick" />
 </RelativeLayout>

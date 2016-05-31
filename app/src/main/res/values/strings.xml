@@ -2,6 +2,13 @@
     <string name="app_name">Flick</string>
     <string name="title_activity_settings">Settings</string>
 
+    <!-- Strings related to Splash -->
+    <string name="button_set_name">Set Name</string>
+
+
+    <!-- Strings related to Thread -->
+    <string name="button_flick">flick</string>
+
     <!-- Strings related to Settings -->
 
     <!-- Example General settings -->
