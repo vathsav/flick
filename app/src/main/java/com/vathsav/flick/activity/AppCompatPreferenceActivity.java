@@ -1,4 +1,4 @@
-package com.vathsav.flick;
+package com.vathsav.flick.activity;
 
 import android.content.res.Configuration;
 import android.os.Bundle;
