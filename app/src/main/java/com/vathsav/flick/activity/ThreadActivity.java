@@ -1,7 +1,6 @@
 package com.vathsav.flick.activity;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.util.Log;
@@ -22,7 +21,7 @@ import com.vathsav.flick.utils.Constants;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ThreadActivity extends AppCompatActivity {
+public class ThreadActivity extends BaseActivity {
 
     private DatabaseReference reference;
     private RecyclerView recyclerView;
