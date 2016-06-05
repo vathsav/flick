@@ -1,7 +1,7 @@
 # Flick
 An Android chat client powered by Firebase
 
-*Status:* Under development
+**Status:** Under development
 ## Setup
 
 **Create 2 variables in your gradle.properties.**
