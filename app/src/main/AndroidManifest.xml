@@ -55,6 +55,10 @@
             </intent-filter>
         </service>
 
+        <activity
+            android:name=".activity.WalkthroughActivity"
+            android:label="@string/title_activity_walkthrough"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

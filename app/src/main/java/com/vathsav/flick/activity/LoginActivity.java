@@ -2,6 +2,7 @@ package com.vathsav.flick.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.InterpolatorRes;
 import android.support.annotation.NonNull;
 import android.util.Log;
 import android.view.View;
@@ -70,9 +71,7 @@ public class LoginActivity extends BaseActivity {
                 finish();
                 return true;
             case Constants.SIGN_IN_USING_GOOGLE:
-
                 point = true;
-
                 Intent signInIntent = Auth.GoogleSignInApi.getSignInIntent(googleApiClient);
                 startActivityForResult(signInIntent, Constants.REQUEST_CODE_SIGN_IN_GOOGLE);
                 break;
