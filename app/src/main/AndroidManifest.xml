@@ -36,6 +36,20 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        <activity android:name=".activity.FeedbackActivity">
+            <intent-filter>
+                <action android:name="com.vathsav.flick.FEEDBACK" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activity.AboutActivity">
+            <intent-filter>
+                <action android:name="com.vathsav.flick.ABOUT" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".activity.SettingsActivity"
             android:label="@string/title_activity_settings">
@@ -58,7 +72,7 @@
         <activity
             android:name=".activity.WalkthroughActivity"
             android:label="@string/title_activity_walkthrough"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>
