@@ -50,6 +50,7 @@ public class ThreadActivity extends BaseActivity {
             recyclerView.setAdapter(messageAdapter);
         }
 
+        // Code for automatically refreshing a recycler view when the data in the server changes
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {

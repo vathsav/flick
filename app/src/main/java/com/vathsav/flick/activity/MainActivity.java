@@ -9,10 +9,6 @@ import android.view.MenuItem;
 import com.google.firebase.auth.FirebaseAuth;
 import com.vathsav.flick.R;
 import com.vathsav.flick.model.ConversationAdapter;
-import com.vathsav.flick.model.ConversationItem;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class MainActivity extends BaseActivity {
 
@@ -24,7 +20,7 @@ public class MainActivity extends BaseActivity {
         RecyclerView conversationsList = (RecyclerView) findViewById(R.id.recycler_view_main);
         StaggeredGridLayoutManager staggeredGridLayoutManager = new StaggeredGridLayoutManager(1, 1);
 
-        ConversationAdapter conversationAdapter = new ConversationAdapter(getListOfConversations(),
+        ConversationAdapter conversationAdapter = new ConversationAdapter(null,
                 getApplicationContext());
 
         if (conversationsList != null) {
@@ -47,19 +43,5 @@ public class MainActivity extends BaseActivity {
                 return true;
         }
         return false;
-    }
-
-    private List<ConversationItem> getListOfConversations() {
-        List<ConversationItem> listOfConversations = new ArrayList<>();
-        listOfConversations.add(new ConversationItem(1, "Vathsav", "Hello world"));
-        listOfConversations.add(new ConversationItem(2, "Ben", "Hello world"));
-        listOfConversations.add(new ConversationItem(3, "Dave", "Hello world"));
-        listOfConversations.add(new ConversationItem(4, "Harikrishnan", "Hello world"));
-        listOfConversations.add(new ConversationItem(5, "Lazy", "Hello world"));
-        listOfConversations.add(new ConversationItem(6, "Smosh", "Hello world"));
-        listOfConversations.add(new ConversationItem(7, "Flick", "Hello world"));
-        listOfConversations.add(new ConversationItem(8, "Kemu", "Hello world"));
-        listOfConversations.add(new ConversationItem(9, "Blink", "Hello world"));
-        return listOfConversations;
     }
 }
