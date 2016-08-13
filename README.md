@@ -2,6 +2,13 @@
 An Android chat client powered by Firebase
 
 **Status:** Under development
+
+**Todo:**
+* Chat functionality
+* XMPP server scripts for upstream push notifications.
+* Google authentication
+* Chat groups
+
 ## Setup
 
 **Create 2 variables in your gradle.properties.**
