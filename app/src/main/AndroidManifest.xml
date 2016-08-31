@@ -20,7 +20,7 @@
             android:label="@string/title_activity_walkthrough"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
-                <action android:name="com.vathsav.flick.LOGIN" />
+                <action android:name="com.vathsav.flick.WALKTHROUGH" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
