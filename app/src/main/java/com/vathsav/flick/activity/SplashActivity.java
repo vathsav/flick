@@ -21,7 +21,7 @@ public class SplashActivity extends AppCompatActivity {
                 super.run();
                 try {
                     sleep(2000);
-                    Intent openMainActivity = new Intent("com.vathsav.flick.LOGIN");
+                    Intent openMainActivity = new Intent(Constants.intentMain);
                     startActivity(openMainActivity);
                 } catch (Exception ex) {
                     Log.v(Constants.LOG_CATCH_EXCEPTION_VERBOSE, ex.getMessage());

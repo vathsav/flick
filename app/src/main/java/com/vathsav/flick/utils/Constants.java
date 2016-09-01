@@ -19,6 +19,10 @@ public class Constants {
     public static final int REQUEST_CODE_SIGN_IN_GOOGLE = 1001;
     public static final int REQUEST_CODE_SIGN_IN_FACEBOOK = 1002;
 
+    // Intents
+    public static final String intentWalkthrough = "com.vathsav.flick.WALKTHROUGH";
+    public static final String intentMain = "com.vathsav.flick.MAIN";
+    public static final String intentLogin = "com.vathsav.flick.LOGIN";
 
     // Name
     public static String userName = null;

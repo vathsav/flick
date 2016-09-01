@@ -14,6 +14,7 @@ import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.vathsav.flick.BuildConfig;
+import com.vathsav.flick.utils.Constants;
 
 /**
  * Created by vathsav on 01/06/16.
@@ -50,14 +51,14 @@ public class BaseActivity extends AppCompatActivity implements
                 FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
                 if (firebaseUser != null) {
                     // User is signed in
-                    startActivity(new Intent("com.vathsav.flick.MAIN"));
+                    startActivity(new Intent(Constants.intentMain));
                     finish();
                     Toast.makeText(getApplicationContext(), "User signed in", Toast.LENGTH_SHORT).show();
 
                 } else {
                     // User isn't signed in
                     Toast.makeText(getApplicationContext(), "User wasn't signed in", Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent("com.vathsav.flick.MAIN"));
+                    startActivity(new Intent(Constants.intentMain));
                     finish();
                 }
             }
