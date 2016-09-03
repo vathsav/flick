@@ -5,6 +5,7 @@ An Android chat client powered by Firebase
 
 **Todo:**
 * Chat functionality
+* Chat invites
 * XMPP server scripts for upstream push notifications.
 * Google authentication
 * Chat groups
