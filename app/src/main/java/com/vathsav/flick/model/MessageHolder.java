@@ -19,6 +19,7 @@ public class MessageHolder extends RecyclerView.ViewHolder implements View.OnCli
         super(itemView);
         this.context = context;
         itemView.setOnClickListener(this);
+
         // User's bubble is on the right, the other person's is on the right
         chatBubbleLeft = (TextView) itemView.findViewById(R.id.text_view_chat_bubble_left);
         chatBubbleRight = (TextView) itemView.findViewById(R.id.text_view_chat_bubble_right);

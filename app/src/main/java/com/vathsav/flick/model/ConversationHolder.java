@@ -7,14 +7,15 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.vathsav.flick.R;
+import com.vathsav.flick.utils.Constants;
 
 /**
  * Created by vathsav on 31/05/16.
  */
 public class ConversationHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-    private final Context context;
     final TextView conversationName;
     final TextView conversationMessage;
+    private final Context context;
 
     public ConversationHolder(View itemView, Context context) {
         super(itemView);
@@ -26,7 +27,8 @@ public class ConversationHolder extends RecyclerView.ViewHolder implements View.
 
     @Override
     public void onClick(View v) {
-        Intent openThread = new Intent("com.vathsav.flick.THREAD");
+        Intent openThread = new Intent(Constants.intentThread);
+        // TODO: 03/09/16 Send thread ids to ThreadActivity as an intent extra
         openThread.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         context.startActivity(openThread);
     }

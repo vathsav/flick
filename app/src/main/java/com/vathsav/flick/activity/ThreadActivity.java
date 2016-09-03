@@ -59,10 +59,10 @@ public class ThreadActivity extends BaseActivity {
                 for (DataSnapshot messageSnapshot : dataSnapshot.getChildren()) {
                     conversation.add(
                             new MessageItem(
-                                    messageSnapshot.child("messageId").getValue().toString(),
-                                    messageSnapshot.child("senderName").getValue().toString(),
-                                    messageSnapshot.child("messageBody").getValue().toString(),
-                                    messageSnapshot.child("messageTimestamp").getValue().toString()
+                                    messageSnapshot.child("message_id").getValue().toString(),
+                                    messageSnapshot.child("sender_name").getValue().toString(),
+                                    messageSnapshot.child("message_body").getValue().toString(),
+                                    messageSnapshot.child("message_timestamp").getValue().toString()
                             ));
                 }
 

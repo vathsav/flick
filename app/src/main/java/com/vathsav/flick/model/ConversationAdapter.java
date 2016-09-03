@@ -12,6 +12,7 @@ import java.util.List;
 
 /**
  * Created by vathsav on 31/05/16.
+ * Adapter for conversation items.
  */
 public class ConversationAdapter extends RecyclerView.Adapter<ConversationHolder> {
     private final List<ConversationItem> listOfConversations;

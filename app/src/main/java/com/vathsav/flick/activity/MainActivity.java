@@ -9,6 +9,9 @@ import android.view.MenuItem;
 import com.google.firebase.auth.FirebaseAuth;
 import com.vathsav.flick.R;
 import com.vathsav.flick.model.ConversationAdapter;
+import com.vathsav.flick.model.ConversationItem;
+
+import java.util.ArrayList;
 
 public class MainActivity extends BaseActivity {
 
@@ -20,7 +23,8 @@ public class MainActivity extends BaseActivity {
         RecyclerView conversationsList = (RecyclerView) findViewById(R.id.recycler_view_main);
         StaggeredGridLayoutManager staggeredGridLayoutManager = new StaggeredGridLayoutManager(1, 1);
 
-        ConversationAdapter conversationAdapter = new ConversationAdapter(null,
+
+        ConversationAdapter conversationAdapter = new ConversationAdapter(generateDummyConversations(),
                 getApplicationContext());
 
         if (conversationsList != null) {
@@ -43,5 +47,14 @@ public class MainActivity extends BaseActivity {
                 return true;
         }
         return false;
+    }
+
+    public ArrayList<ConversationItem> generateDummyConversations() {
+        ArrayList<ConversationItem> arrayList = new ArrayList<>();
+        arrayList.add(new ConversationItem(0, "Sentinel", "Peace."));
+        arrayList.add(new ConversationItem(1, "Crazy Ivan", "#$!@#+&%"));
+        arrayList.add(new ConversationItem(2, "Deadshot", "You HEAR ME?!"));
+        arrayList.add(new ConversationItem(2, "Autobot", "Don't mess with me."));
+        return arrayList;
     }
 }

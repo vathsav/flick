@@ -2,36 +2,37 @@ package com.vathsav.flick.model;
 
 /**
  * Created by vathsav on 31/05/16.
+ * POJO for Message Bubbles
  */
 public class MessageItem {
-    private String messageId;
-    private String senderName;
-    private String messageBody;
-    private String messageTimestamp;
+    private String message_id;
+    private String sender_name;
+    private String message_body;
+    private String message_timestamp;
 
     public MessageItem() {
     }
 
-    public MessageItem(String messageId, String senderName, String messageBody, String messageTimestamp) {
-        this.messageId = messageId;
-        this.senderName = senderName;
-        this.messageBody = messageBody;
-        this.messageTimestamp = messageTimestamp;
+    public MessageItem(String message_id, String sender_name, String message_body, String message_timestamp) {
+        this.message_id = message_id;
+        this.sender_name = sender_name;
+        this.message_body = message_body;
+        this.message_timestamp = message_timestamp;
     }
 
     public String getMessageId() {
-        return messageId;
+        return message_id;
     }
 
     public String getSenderName() {
-        return senderName;
+        return sender_name;
     }
 
     public String getMessageBody() {
-        return messageBody;
+        return message_body;
     }
 
     public String getMessageTimestamp() {
-        return messageTimestamp;
+        return message_timestamp;
     }
 }

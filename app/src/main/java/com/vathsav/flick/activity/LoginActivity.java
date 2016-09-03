@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.Toast;
 
 import com.google.android.gms.auth.api.Auth;
@@ -27,7 +26,6 @@ public class LoginActivity extends BaseActivity {
         setContentView(R.layout.activity_login);
 
         SignInButton signInButton = (SignInButton) findViewById(R.id.sign_in_button);
-        Button takeMeIn = (Button) findViewById(R.id.button_take_me_in);
 
         if (signInButton != null)
             signInButton.setOnClickListener(new View.OnClickListener() {
@@ -37,16 +35,6 @@ public class LoginActivity extends BaseActivity {
                         Log.v(Constants.LOG_CATCH_EXCEPTION_VERBOSE, "Error Signing In");
                 }
             });
-
-        if (takeMeIn != null) {
-            takeMeIn.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-//                    if (!signIn(Constants.SIGN_IN_USING_EMAIL))
-                    Log.v(Constants.LOG_CATCH_EXCEPTION_VERBOSE, "Error Signing In");
-                }
-            });
-        }
     }
 
     @Override
@@ -66,7 +54,7 @@ public class LoginActivity extends BaseActivity {
     private boolean signIn(String signInMode) {
         switch (signInMode) {
             case Constants.SIGN_IN_USING_EMAIL:
-                startActivity(new Intent("com.vathsav.flick.MAIN"));
+                startActivity(new Intent(Constants.intentMain));
                 finish();
                 return true;
             case Constants.SIGN_IN_USING_GOOGLE:
