@@ -17,7 +17,7 @@
             android:layout_height="wrap_content"
             android:background="@color/colorAccent"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textColor="@color/colorWhite" />
+            android:textColor="@color/colorWhiteDirty" />
 
         <TextView
             android:id="@+id/card_conversation_item_name_message"
@@ -25,6 +25,6 @@
             android:layout_height="wrap_content"
             android:background="@color/colorPrimary"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textColor="@color/colorWhite" />
+            android:textColor="@color/colorWhiteDirty" />
     </LinearLayout>
 </android.support.v7.widget.CardView>

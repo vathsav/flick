@@ -6,22 +6,29 @@
 
     <TextView
         android:id="@+id/text_view_chat_bubble_left"
-        android:layout_width="270dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimaryDark"
+        android:layout_marginTop="10dp"
+        android:background="@color/colorSenderBubble"
         android:gravity="start"
+        android:padding="5dp"
         android:textAlignment="textStart"
-        android:textAppearance="?android:attr/textAppearanceSmall" />
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="@color/colorWhiteDirty"
+        android:textSize="18sp" />
 
     <TextView
         android:id="@+id/text_view_chat_bubble_right"
-        android:layout_width="270dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
-        android:background="@color/colorAccent"
+        android:layout_marginTop="10dp"
+        android:background="@color/colorReceiverBubble"
         android:gravity="end"
+        android:padding="5dp"
         android:textAlignment="textEnd"
-        android:textAppearance="?android:attr/textAppearanceSmall" />
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="@color/colorWhiteDirty"
+        android:textSize="18sp" />
 </RelativeLayout>
