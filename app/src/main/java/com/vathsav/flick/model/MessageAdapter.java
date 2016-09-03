@@ -15,10 +15,10 @@ import java.util.List;
  * Created by vathsav on 31/05/16.
  */
 public class MessageAdapter extends RecyclerView.Adapter<MessageHolder> {
-    private final List<MessageItem> conversationThread;
+    private final List<MessageItemGetter> conversationThread;
     private final Context context;
 
-    public MessageAdapter(List<MessageItem> conversationThread, Context context) {
+    public MessageAdapter(List<MessageItemGetter> conversationThread, Context context) {
         this.conversationThread = conversationThread;
         this.context = context;
     }

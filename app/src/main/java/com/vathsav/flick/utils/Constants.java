@@ -32,6 +32,6 @@ public class Constants {
     public static final String intentSettings = "com.vathsav.flick.SETTINGS";
 
     // Miscellaneous
-    public static String userName = null;
+    public static String userName = "Joker";
     public String firebaseUrl = BuildConfig.FIREBASE_URL;
 }

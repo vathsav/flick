@@ -15,7 +15,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.vathsav.flick.R;
 import com.vathsav.flick.model.MessageAdapter;
-import com.vathsav.flick.model.MessageItem;
+import com.vathsav.flick.model.MessageItemGetter;
+import com.vathsav.flick.model.MessageItemSetter;
 import com.vathsav.flick.utils.Constants;
 
 import java.util.ArrayList;
@@ -31,7 +32,7 @@ public class ThreadActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_thread);
 
-        final String conversationId = "12345";
+        final String conversationId = "0";
 
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
         final EditText message = (EditText) findViewById(R.id.edit_text_message);
@@ -54,11 +55,11 @@ public class ThreadActivity extends BaseActivity {
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                List<MessageItem> conversation = new ArrayList<>();
+                List<MessageItemGetter> conversation = new ArrayList<>();
 
                 for (DataSnapshot messageSnapshot : dataSnapshot.getChildren()) {
                     conversation.add(
-                            new MessageItem(
+                            new MessageItemGetter(
                                     messageSnapshot.child("message_id").getValue().toString(),
                                     messageSnapshot.child("sender_name").getValue().toString(),
                                     messageSnapshot.child("message_body").getValue().toString(),
@@ -82,7 +83,7 @@ public class ThreadActivity extends BaseActivity {
                 @Override
                 public void onClick(View v) {
                     reference.push().setValue(
-                            new MessageItem(String.valueOf(reference.push().hashCode()),
+                            new MessageItemSetter(String.valueOf(reference.push().hashCode()),
                                     Constants.userName,
                                     message.getText().toString(),
                                     String.valueOf(System.currentTimeMillis())
@@ -92,10 +93,10 @@ public class ThreadActivity extends BaseActivity {
         }
     }
 
-    private List<MessageItem> createDummyConversationThread() {
-        List<MessageItem> conversation = new ArrayList<>();
+    private List<MessageItemGetter> createDummyConversationThread() {
+        List<MessageItemGetter> conversation = new ArrayList<>();
         conversation.add(
-                new MessageItem("1",
+                new MessageItemGetter("1",
                         "Vathsav",
                         "Loading Conversation",
                         String.valueOf(System.currentTimeMillis())
