@@ -1,8 +1,8 @@
 package com.vathsav.flick.activity;
 
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -41,13 +41,13 @@ public class ThreadActivity extends BaseActivity {
 
         Button buttonFlick = (Button) findViewById(R.id.button_flick);
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view_conversation_thread);
-        StaggeredGridLayoutManager staggeredGridLayoutManager = new StaggeredGridLayoutManager(1, 1);
+        final LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext());
 
-        MessageAdapter messageAdapter = new
+        final MessageAdapter messageAdapter = new
                 MessageAdapter(createDummyConversationThread(), getApplicationContext());
 
         if (recyclerView != null) {
-            recyclerView.setLayoutManager(staggeredGridLayoutManager);
+            recyclerView.setLayoutManager(linearLayoutManager);
             recyclerView.setAdapter(messageAdapter);
         }
 
@@ -56,6 +56,10 @@ public class ThreadActivity extends BaseActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 List<MessageItemGetter> conversation = new ArrayList<>();
+                recyclerView.setAdapter(new MessageAdapter(conversation, getApplicationContext()));
+
+                // Reset the messageAdapter. There's a weird margin on top if I don't.
+                recyclerView.setAdapter(new MessageAdapter(null, getApplicationContext()));
 
                 for (DataSnapshot messageSnapshot : dataSnapshot.getChildren()) {
                     conversation.add(
@@ -67,8 +71,11 @@ public class ThreadActivity extends BaseActivity {
                             ));
                 }
 
-                if (recyclerView != null)
+                if (recyclerView != null) {
+                    recyclerView.setLayoutManager(linearLayoutManager);
+                    recyclerView.scrollToPosition(conversation.size() - 1);
                     recyclerView.setAdapter(new MessageAdapter(conversation, getApplicationContext()));
+                }
             }
 
             @Override
@@ -88,6 +95,7 @@ public class ThreadActivity extends BaseActivity {
                                     message.getText().toString(),
                                     String.valueOf(System.currentTimeMillis())
                             ));
+                    message.setText("");
                 }
             });
         }
