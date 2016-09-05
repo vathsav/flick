@@ -3,19 +3,25 @@
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
+    android:orientation="horizontal"
     card_view:cardUseCompatPadding="true">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/colorContactCardBackground">
+
+        <ImageView
+            android:id="@+id/image_view_display_picture"
+            android:layout_width="50dp"
+            android:layout_height="50dp" />
 
         <TextView
             android:id="@+id/card_conversation_item_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/colorAccent"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/image_view_display_picture"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="@color/colorWhiteDirty" />
 
@@ -23,8 +29,11 @@
             android:id="@+id/card_conversation_item_name_message"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/colorPrimary"
-            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_below="@+id/card_conversation_item_name"
+            android:layout_toEndOf="@+id/image_view_display_picture"
+            android:ellipsize="marquee"
+            android:maxLines="1"
             android:textColor="@color/colorWhiteDirty" />
-    </LinearLayout>
+    </RelativeLayout>
+
 </android.support.v7.widget.CardView>

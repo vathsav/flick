@@ -11,7 +11,9 @@ import com.vathsav.flick.utils.Constants;
 
 /**
  * Created by vathsav on 31/05/16.
+ * ViewHolder for picking a chat thread
  */
+
 public class ConversationHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
     final TextView conversationName;
     final TextView conversationMessage;

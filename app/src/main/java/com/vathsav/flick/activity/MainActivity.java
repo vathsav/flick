@@ -49,8 +49,8 @@ public class MainActivity extends BaseActivity {
         return false;
     }
 
-    // TODO: 03/09/16 Enable users to create their own conversation thread by searching for an existing Flick user and sending an invite.
-    public ArrayList<ConversationItem> generateDummyConversations() {
+    // TODO: 03/09/16 Enable users to create their own conversation threads by searching for an existing Flick user and sending an invite.
+    private ArrayList<ConversationItem> generateDummyConversations() {
         ArrayList<ConversationItem> arrayList = new ArrayList<>();
         arrayList.add(new ConversationItem(0, "Sentinel", "Peace."));
         arrayList.add(new ConversationItem(1, "Crazy Ivan", "#$!@#+&%"));

@@ -13,7 +13,9 @@ import java.util.List;
 
 /**
  * Created by vathsav on 31/05/16.
+ * MessageAdapter for chat threads
  */
+
 public class MessageAdapter extends RecyclerView.Adapter<MessageHolder> {
     private final List<MessageItemGetter> conversationThread;
     private final Context context;

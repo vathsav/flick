@@ -5,11 +5,26 @@
     android:layout_height="match_parent"
     tools:context="com.vathsav.flick.activity.ThreadActivity">
 
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar_conversation_thread"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            android:fitsSystemWindows="true" />
+    </android.support.design.widget.AppBarLayout>
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycler_view_conversation_thread"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/button_flick"
+        android:layout_below="@+id/view"
         android:clipToPadding="false"
         android:padding="@dimen/conversation_recycler_view_padding"
         android:scrollbars="vertical" />

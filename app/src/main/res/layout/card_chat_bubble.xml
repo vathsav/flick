@@ -6,29 +6,37 @@
 
     <TextView
         android:id="@+id/text_view_chat_bubble_left"
-        android:layout_width="300dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="5dp"
         android:background="@color/colorSenderBubble"
         android:gravity="start"
-        android:padding="5dp"
+        android:paddingBottom="5dp"
+        android:paddingEnd="10dp"
+        android:paddingStart="10dp"
+        android:paddingTop="5dp"
         android:textAlignment="textStart"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:textColor="@color/colorWhiteDirty"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        android:visibility="gone" />
 
     <TextView
         android:id="@+id/text_view_chat_bubble_right"
-        android:layout_width="300dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="5dp"
         android:background="@color/colorReceiverBubble"
         android:gravity="end"
-        android:padding="5dp"
+        android:paddingBottom="5dp"
+        android:paddingEnd="10dp"
+        android:paddingStart="10dp"
+        android:paddingTop="5dp"
         android:textAlignment="textEnd"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:textColor="@color/colorWhiteDirty"
-        android:textSize="18sp" />
+        android:textSize="18sp"
+        android:visibility="gone" />
 </RelativeLayout>

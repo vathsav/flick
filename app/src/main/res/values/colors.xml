@@ -9,6 +9,7 @@
     <color name="colorSenderBubble">#FF9800</color>
     <color name="colorReceiverBubble">#795548</color>
     <color name="colorFlickButton">#E91E63</color>
+    <color name="colorContactCardBackground">#607D8B</color>
 
     // General colors
     <color name="colorBlackDirty">#212121</color>
