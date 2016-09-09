@@ -5,6 +5,7 @@
 
     <!-- Strings related to Splash -->
     <string name="action_logout">Logout</string>
+    <string name="action_new_conversation">New Conversation</string>
 
     <!-- Strings related to Thread -->
     <string name="button_flick">flick</string>

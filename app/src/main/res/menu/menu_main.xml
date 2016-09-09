@@ -2,6 +2,12 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
+        android:id="@+id/action_new_conversation"
+        android:icon="@android:drawable/ic_input_add"
+        android:orderInCategory="100"
+        android:title="@string/action_new_conversation"
+        app:showAsAction="always" />
+    <item
         android:id="@+id/action_logout"
         android:icon="@android:drawable/ic_lock_power_off"
         android:orderInCategory="100"

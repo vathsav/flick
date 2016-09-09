@@ -27,7 +27,6 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-
         <activity android:name=".activity.LoginActivity">
             <intent-filter>
                 <action android:name="com.vathsav.flick.LOGIN" />
@@ -71,6 +70,13 @@
             android:label="@string/title_activity_settings">
             <intent-filter>
                 <action android:name="com.vathsav.flick.SETTINGS" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activity.NewConversation">
+            <intent-filter>
+                <action android:name="com.vathsav.flick.NEW_CONVERSATION" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>

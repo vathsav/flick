@@ -1,5 +1,6 @@
 package com.vathsav.flick.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
@@ -10,6 +11,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.vathsav.flick.R;
 import com.vathsav.flick.model.ConversationAdapter;
 import com.vathsav.flick.model.ConversationItem;
+import com.vathsav.flick.utils.Constants;
 
 import java.util.ArrayList;
 
@@ -45,6 +47,9 @@ public class MainActivity extends BaseActivity {
             case R.id.action_logout:
                 FirebaseAuth.getInstance().signOut();
                 return true;
+            case R.id.action_new_conversation:
+                Intent newConversation = new Intent(Constants.intentNewConversation);
+                startActivity(newConversation);
         }
         return false;
     }

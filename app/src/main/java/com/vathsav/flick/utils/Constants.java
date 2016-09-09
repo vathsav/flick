@@ -32,6 +32,7 @@ public class Constants {
     public static final String intentFeedback = "com.vathsav.flick.FEEDBACK";
     public static final String intentAbout = "com.vathsav.flick.ABOUT";
     public static final String intentSettings = "com.vathsav.flick.SETTINGS";
+    public static final String intentNewConversation = "com.vathsav.flick.NEW_CONVERSATION";
 
     // Firebase references
     public static final DatabaseReference firebaseReferenceUsers = FirebaseDatabase.getInstance().getReference("users");
