@@ -20,7 +20,7 @@ public class SplashActivity extends AppCompatActivity {
             public void run() {
                 try {
                     sleep(2000);
-                    Intent openMainActivity = new Intent(Constants.intentMain);
+                    Intent openMainActivity = Constants.intentMain;
                     startActivity(openMainActivity);
                 } catch (Exception ex) {
                     Log.v(Constants.LOG_CATCH_EXCEPTION_VERBOSE, ex.getMessage());

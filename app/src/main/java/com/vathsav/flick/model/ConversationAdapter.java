@@ -26,7 +26,7 @@ public class ConversationAdapter extends RecyclerView.Adapter<ConversationHolder
     @Override
     public ConversationHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(
-                R.layout.card_conversation_item, null);
+                R.layout.card_conversation, null);
         return new ConversationHolder(view, context);
     }
 

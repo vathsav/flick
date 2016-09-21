@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    card_view:cardUseCompatPadding="true">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <RelativeLayout
         android:layout_width="wrap_content"
@@ -12,28 +10,27 @@
         android:background="@color/colorContactCardBackground">
 
         <ImageView
-            android:id="@+id/image_view_display_picture"
+            android:id="@+id/image_view_contact_display_picture"
             android:layout_width="50dp"
             android:layout_height="50dp" />
 
         <TextView
-            android:id="@+id/card_conversation_item_name"
+            android:id="@+id/text_view_contact_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-            android:layout_toEndOf="@+id/image_view_display_picture"
+            android:layout_toEndOf="@+id/image_view_contact_display_picture"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="@color/colorWhiteDirty" />
 
         <TextView
-            android:id="@+id/card_conversation_item_name_message"
+            android:id="@+id/text_view_contact_number"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/card_conversation_item_name"
-            android:layout_toEndOf="@+id/image_view_display_picture"
+            android:layout_below="@+id/text_view_contact_name"
+            android:layout_toEndOf="@+id/image_view_contact_display_picture"
             android:ellipsize="marquee"
             android:maxLines="1"
             android:textColor="@color/colorWhiteDirty" />
     </RelativeLayout>
-
-</android.support.v7.widget.CardView>
+</LinearLayout>

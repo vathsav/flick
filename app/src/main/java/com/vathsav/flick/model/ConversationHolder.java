@@ -29,7 +29,7 @@ public class ConversationHolder extends RecyclerView.ViewHolder implements View.
 
     @Override
     public void onClick(View v) {
-        Intent openThread = new Intent(Constants.intentThread);
+        Intent openThread = Constants.intentThread;
         // TODO: 03/09/16 Send thread ids to ThreadActivity as an intent extra
         openThread.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         context.startActivity(openThread);
