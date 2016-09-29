@@ -45,10 +45,10 @@ public class MainActivity extends BaseActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_logout:
-                FirebaseAuth.getInstance().signOut();
+//                FirebaseAuth.getInstance().signOut();
                 return true;
             case R.id.action_new_conversation:
-                Intent newConversation = new Intent(Constants.intentNewConversation);
+                Intent newConversation = Constants.intentNewConveration;
                 startActivity(newConversation);
         }
         return false;
