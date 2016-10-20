@@ -21,7 +21,8 @@ public class SplashActivity extends AppCompatActivity {
                 try {
                     sleep(2000);
                     Intent openMainActivity = Constants.intentMain;
-                    startActivity(openMainActivity);
+                    Intent openLoginActivty = Constants.intentLogin;
+                    startActivity(openLoginActivty);
                 } catch (Exception ex) {
                     Log.v(Constants.LOG_CATCH_EXCEPTION_VERBOSE, ex.getMessage());
                 } finally {

@@ -34,6 +34,8 @@ public class NewConversationActivity extends AppCompatActivity {
 
         ContactAdapter contactAdapter = new ContactAdapter(dummyContacts(), getApplicationContext());
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+
+
         recyclerView.setAdapter(contactAdapter);
     }
 

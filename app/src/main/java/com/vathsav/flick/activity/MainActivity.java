@@ -7,7 +7,9 @@ import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.ValueEventListener;
 import com.vathsav.flick.R;
 import com.vathsav.flick.model.ConversationAdapter;
 import com.vathsav.flick.model.ConversationItem;
@@ -22,17 +24,29 @@ public class MainActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        RecyclerView conversationsList = (RecyclerView) findViewById(R.id.recycler_view_main);
-        StaggeredGridLayoutManager staggeredGridLayoutManager = new StaggeredGridLayoutManager(1, 1);
+        final RecyclerView conversationsList = (RecyclerView) findViewById(R.id.recycler_view_main);
 
+        // TODO: 20/10/16 Query available users
+        // TODO: 03/09/16 Enable users to create their own conversation threads by searching for an existing Flick user and sending an invite.
 
-        ConversationAdapter conversationAdapter = new ConversationAdapter(generateDummyConversations(),
-                getApplicationContext());
+        Constants.firebaseReferenceUsers.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                ArrayList<ConversationItem> listOfConversations = new ArrayList<>();
 
-        if (conversationsList != null) {
-            conversationsList.setLayoutManager(staggeredGridLayoutManager);
-            conversationsList.setAdapter(conversationAdapter);
-        }
+                for (DataSnapshot userSnapshot : dataSnapshot.getChildren()) {
+                    listOfConversations.add(new ConversationItem(0, userSnapshot.getKey(), "last_message"));
+                }
+
+                conversationsList.setLayoutManager(new StaggeredGridLayoutManager(1, 1));
+                conversationsList.setAdapter(new ConversationAdapter(listOfConversations, getApplicationContext()));
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
     }
 
     @Override
@@ -52,15 +66,5 @@ public class MainActivity extends BaseActivity {
                 startActivity(newConversation);
         }
         return false;
-    }
-
-    // TODO: 03/09/16 Enable users to create their own conversation threads by searching for an existing Flick user and sending an invite.
-    private ArrayList<ConversationItem> generateDummyConversations() {
-        ArrayList<ConversationItem> arrayList = new ArrayList<>();
-        arrayList.add(new ConversationItem(0, "Sentinel", "Peace."));
-        arrayList.add(new ConversationItem(1, "Crazy Ivan", "#$!@#+&%"));
-        arrayList.add(new ConversationItem(2, "Deadshot", "You HEAR ME?!"));
-        arrayList.add(new ConversationItem(2, "Autobot", "Don't mess with me."));
-        return arrayList;
     }
 }
