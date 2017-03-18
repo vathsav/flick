@@ -12,6 +12,7 @@
         <ImageView
             android:id="@+id/image_view_contact_display_picture"
             android:layout_width="50dp"
+            android:contentDescription="@string/content_description_display_picture"
             android:layout_height="50dp" />
 
         <TextView

@@ -7,6 +7,9 @@
     <string name="action_logout">Logout</string>
     <string name="action_new_conversation">New Conversation</string>
 
+    <!-- Content Descriptions -->
+    <string name="content_description_display_picture">Display Picture</string>
+
     <!-- Strings related to Thread -->
     <string name="button_flick">flick</string>
 

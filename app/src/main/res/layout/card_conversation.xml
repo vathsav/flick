@@ -14,7 +14,8 @@
         <ImageView
             android:id="@+id/image_view_conversation_display_picture"
             android:layout_width="50dp"
-            android:layout_height="50dp" />
+            android:layout_height="50dp"
+            android:contentDescription="@string/content_description_display_picture" />
 
         <TextView
             android:id="@+id/card_conversation_item_name"

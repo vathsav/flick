@@ -14,10 +14,10 @@ import com.vathsav.flick.utils.Constants;
  * ViewHolder for contacts screen
  */
 public class ContactHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-    Context context;
-    ImageView imageViewPicture;
-    TextView textViewContactName;
-    TextView textViewContactNumber;
+    final Context context;
+    final ImageView imageViewPicture;
+    final TextView textViewContactName;
+    final TextView textViewContactNumber;
 
     public ContactHolder(View itemView, Context context) {
         super(itemView);
