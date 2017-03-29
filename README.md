@@ -3,7 +3,7 @@ An Android chat client powered by Firebase
 
 **Status:** Under development
 
-![alt tag](http://www.vathsav.com/img/real_time_chat_client_using_firebase/chat_emulators.gif)
+![alt tag](http://www.vathsav.com/img/realtime_chat_client_using_firebase/chat_emulators.gif)
 
 **Todo:**
 * Chat functionality
