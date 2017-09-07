@@ -1,4 +1,4 @@
-package com.vathsav.flick.model;
+package com.vathsav.flick.adapter;
 
 import android.content.Context;
 import android.content.Intent;
@@ -23,8 +23,8 @@ public class ConversationHolder extends RecyclerView.ViewHolder implements View.
         super(itemView);
         this.context = context;
         itemView.setOnClickListener(this);
-        conversationName = (TextView) itemView.findViewById(R.id.card_conversation_item_name);
-        conversationMessage = (TextView) itemView.findViewById(R.id.card_conversation_item_name_message);
+        conversationName = itemView.findViewById(R.id.card_conversation_item_name);
+        conversationMessage = itemView.findViewById(R.id.card_conversation_item_name_message);
     }
 
     @Override

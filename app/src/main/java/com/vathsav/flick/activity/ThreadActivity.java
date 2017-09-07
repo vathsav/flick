@@ -9,12 +9,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.ValueEventListener;
 import com.vathsav.flick.R;
-import com.vathsav.flick.model.MessageAdapter;
+import com.vathsav.flick.adapter.MessageAdapter;
 import com.vathsav.flick.model.MessageItemGetter;
 import com.vathsav.flick.model.MessageItemSetter;
 import com.vathsav.flick.utils.Constants;
@@ -32,7 +33,7 @@ public class ThreadActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_thread);
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_conversation_thread);
+        Toolbar toolbar = findViewById(R.id.toolbar_conversation_thread);
         toolbar.setTitle("Flick");
         setSupportActionBar(toolbar);
 
@@ -40,8 +41,8 @@ public class ThreadActivity extends BaseActivity {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
 
-        final EditText message = (EditText) findViewById(R.id.edit_text_message);
-        final Button buttonFlick = (Button) findViewById(R.id.button_flick);
+        final EditText message = findViewById(R.id.edit_text_message);
+        final Button buttonFlick = findViewById(R.id.button_flick);
         final LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext());
         final MessageAdapter messageAdapter = new
                 MessageAdapter(createDummyConversationThread(), getApplicationContext());
@@ -50,7 +51,7 @@ public class ThreadActivity extends BaseActivity {
 
         reference = Constants.firebaseReferenceConversations.child(conversationId);
 
-        recyclerView = (RecyclerView) findViewById(R.id.recycler_view_conversation_thread);
+        recyclerView = findViewById(R.id.recycler_view_conversation_thread);
 
         if (recyclerView != null) {
             recyclerView.setLayoutManager(linearLayoutManager);
@@ -99,7 +100,7 @@ public class ThreadActivity extends BaseActivity {
                     if (!message.getText().toString().equals(""))
                         reference.push().setValue(
                                 new MessageItemSetter(String.valueOf(reference.push().hashCode()),
-                                        Constants.userName,
+                                        FirebaseAuth.getInstance().getCurrentUser().getUid(),
                                         message.getText().toString(),
                                         String.valueOf(System.currentTimeMillis())
                                 ));

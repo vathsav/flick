@@ -1,4 +1,4 @@
-package com.vathsav.flick.model;
+package com.vathsav.flick.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -23,8 +23,8 @@ public class MessageHolder extends RecyclerView.ViewHolder implements View.OnCli
         itemView.setOnClickListener(this);
 
         // User's bubble is on the right, the other person's is on the right
-        chatBubbleLeft = (TextView) itemView.findViewById(R.id.text_view_chat_bubble_left);
-        chatBubbleRight = (TextView) itemView.findViewById(R.id.text_view_chat_bubble_right);
+        chatBubbleLeft = itemView.findViewById(R.id.text_view_chat_bubble_left);
+        chatBubbleRight = itemView.findViewById(R.id.text_view_chat_bubble_right);
     }
 
     @Override

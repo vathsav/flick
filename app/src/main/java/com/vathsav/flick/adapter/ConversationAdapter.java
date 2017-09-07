@@ -1,4 +1,4 @@
-package com.vathsav.flick.model;
+package com.vathsav.flick.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.vathsav.flick.R;
+import com.vathsav.flick.model.ConversationItem;
 
 import java.util.List;
 

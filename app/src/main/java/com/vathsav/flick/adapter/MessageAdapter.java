@@ -1,4 +1,4 @@
-package com.vathsav.flick.model;
+package com.vathsav.flick.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -6,8 +6,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.vathsav.flick.R;
-import com.vathsav.flick.utils.Constants;
+import com.vathsav.flick.model.MessageItemGetter;
 
 import java.util.List;
 
@@ -35,7 +36,7 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageHolder> {
     @Override
     public void onBindViewHolder(MessageHolder holder, int position) {
         if (conversationThread != null)
-            if (conversationThread.get(position).getSenderName().equals(Constants.userName)) {
+            if (conversationThread.get(position).getSenderName().equals(FirebaseAuth.getInstance().getCurrentUser().getUid())) {
                 // My own message
                 holder.chatBubbleLeft.setVisibility(View.INVISIBLE);
                 holder.chatBubbleRight.setVisibility(View.VISIBLE);

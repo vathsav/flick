@@ -1,4 +1,4 @@
-package com.vathsav.flick.model;
+package com.vathsav.flick.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -22,9 +22,9 @@ public class ContactHolder extends RecyclerView.ViewHolder implements View.OnCli
     public ContactHolder(View itemView, Context context) {
         super(itemView);
         this.context = context;
-        imageViewPicture = (ImageView) itemView.findViewById(R.id.image_view_contact_display_picture);
-        textViewContactName = (TextView) itemView.findViewById(R.id.text_view_contact_name);
-        textViewContactNumber = (TextView) itemView.findViewById(R.id.text_view_contact_number);
+        imageViewPicture = itemView.findViewById(R.id.image_view_contact_display_picture);
+        textViewContactName = itemView.findViewById(R.id.text_view_contact_name);
+        textViewContactNumber = itemView.findViewById(R.id.text_view_contact_number);
     }
 
     @Override
